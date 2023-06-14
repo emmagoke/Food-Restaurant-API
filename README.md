@@ -8,11 +8,14 @@ This is an API that provide endpoints for Categories , Menuitem, Orders, Cart an
 
 
 ## Local Requirement
-- Requires Python 3.6 or Later
+- Requires Python 3.7 or Later
 - Pipenv
+- Django 3.2 or Later
+- DjangoRestFrameWork
+- Djoser
 
 #### Virtual Environment
 
-I recommend working `pipenv` whenever using Python for projects. This keeps your dependencies for each project separate and organized. Instructions for setting up a virtual environment using `pipenv` for your platform can be found in the [python docs](https://pipenv.pypa.io/en/latest/index.html)
+I recommend working `pipenv` whenever using Python for projects. This keeps your dependencies for each project separate and organized. Instructions for setting up a virtual environment using `pipenv` for your platform can be found in the [pipenv docs](https://pipenv.pypa.io/en/latest/index.html)
 
 ##### To Create a virtual Environment
