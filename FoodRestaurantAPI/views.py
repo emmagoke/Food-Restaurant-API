@@ -23,3 +23,20 @@ class CategoriesView(generics.ListCreateAPIView):
             permission_classes = [IsAuthenticated]
 
         return [permission() for permission in permission_classes]
+
+
+##########################
+# Menu-items endpoints
+##########################
+
+# class MenuItemsView(generics.ListCreateAPIView):
+# 	queryset = MenuItem.objects.all()
+# 	serializer_class = MenuItemSerializer
+
+# 	def get_permission(self):
+# 		permission_classes = [IsAuthenticated]
+
+# 		if self.request.method != 'GET':
+# 			permission_classes = [IsAdminUser]
+
+# 		return [permission() for permission in permission_classes]
