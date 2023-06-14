@@ -36,14 +36,51 @@ I recommend working `pipenv` whenever using Python for projects. This keeps your
 #### POST '/api/token/login/'
 - `Role` - Anyone with a valid username and password
 - `Purpose` - Generates access tokens that can be used in other API calls in this Django project
-- Request(`auth token`) - `prefix` - (Token), token_generated for the user.
+- Request(`payload`) - username, password.
 
 
 ### Menu-items endpoints
-#### GET '/api/categories'
+#### GET '/api/menu-items'
+- `Role` - Customer, delivery crew
+- `Purpose` - Lists all menu items. Return a 200 – Ok HTTP status code
+<!-- - Request(`auth token`) - `prefix` - (Token), token_generated for the user. -->
+#### POST, PUT, PATCH, DELETE '/api/menu-items'
+- `Role` - Customer, delivery crew
+- `Purpose` - Denies access and returns 403 – Unauthorized HTTP status code
+<!-- - Request(`auth token`) - `prefix` - (Token), token_generated for the user. -->
+#### GET '/api/menu-items/{menuItem}'
+- `Role` - Customer, delivery crew
+- `Purpose` - Lists single menu item.
+<!-- - Request(`auth token`) - `prefix` - (Token), token_generated for the user. -->
+#### POST, PUT, PATCH, DELETE '/api/menu-items/{menuItem}'
+- `Role` - Customer, delivery crew
+- `Purpose` - Returns 403 - Unauthorized.
+<!-- - Request(`auth token`) - `prefix` - (Token), token_generated for the user. -->
+#### GET '/api/menu-items'
+- `Role` - Manager
+- `Purpose` - Lists all menu items.
+<!-- - Request(`auth token`) - `prefix` - (Token), token_generated for the user. -->
+#### POST '/api/menu-items'
+- `Role` - Manager
+- `Purpose` - Creates a new menu item and returns 201 - Created.
+<!-- - Request(`auth token`) - `prefix` - (Token), token_generated for the user. -->
+#### GET '/api/menu-items/{menuItem}'
+- `Role` - Manager
+- `Purpose` - Lists single menu item.
+<!-- - Request(`auth token`) - `prefix` - (Token), token_generated for the user. -->
+#### PUT, PATCH '/api/menu-items/{menuItem}'
+- `Role` - Manager
+- `Purpose` - Updates single menu item.
+<!-- - Request(`auth token`) - `prefix` - (Token), token_generated for the user. -->
+#### DELETE '/api/menu-items/{menuItem}'
+- `Role` - Manager
+- `Purpose` - Deletes menu item.
+<!-- - Request(`auth token`) - `prefix` - (Token), token_generated for the user. -->
+
+<!-- #### GET '/api/categories'
 - `Role` - 
 - `Purpose` - Gets a dictionary of categories from the Category database in which the keys are the ids and the value is the corresponding category in string format.
 - Request: None
 - Response: An object  that contains the id, title and slug of all the categories in the database.
 
->Example: `curl http://127.0.0.1:8000/api/categories`
+>Example: `curl http://127.0.0.1:8000/api/categories` -->
